@@ -13,8 +13,6 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Data
 public class UpdateContactDTO {
-    @NotNull
-    Integer id;
 
     @Email
     @Size(min = 5)
@@ -26,7 +24,7 @@ public class UpdateContactDTO {
     @Size(min = Constants.Constraints.CONTACT_NUM, max = Constants.Constraints.CONTACT_NUM)
     String contactNumber;
 
-    @Size(min = Constants.Constraints.ADDRESS_MIN, max = Constants.Constraints.ADDRESS_MAX)
+    @Size(max = Constants.Constraints.ADDRESS_MAX)
     String address;
 
     String tag;

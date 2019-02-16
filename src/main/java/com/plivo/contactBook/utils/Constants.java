@@ -3,7 +3,6 @@ package com.plivo.contactBook.utils;
 public class Constants {
     public static class Constraints {
         public static final int CONTACT_NUM = 10;
-        public static final int ADDRESS_MIN = 0;
         public static final int ADDRESS_MAX = 200;
         public static final int NAME_MIN = 2;
         public static final int NAME_MAX = 100;
@@ -27,11 +26,7 @@ public class Constants {
 
     public class ErrorMessage {
         public static final String INVALID_CREDENTIALS = "Invalid credentials";
-        public static final String CONTACT_SUPPORT = "Please contact support";
         public static final String INVALID_PARAMS = "Invalid parameters";
-        public static final String TRY_AGAIN = "Please try again";
-        public static final String NOT_FOUND = "Data not found";
-        public static final String UNAUTHORIZED_ACCESS = "Unauthorized access";
     }
 
     public class Roles {

@@ -26,7 +26,7 @@ public class AddContactDTO {
     @Size(min = Constants.Constraints.CONTACT_NUM, max = Constants.Constraints.CONTACT_NUM)
     String contactNumber;
 
-    @Size(min = Constants.Constraints.ADDRESS_MIN, max = Constants.Constraints.ADDRESS_MAX)
+    @Size(max = Constants.Constraints.ADDRESS_MAX)
     String address;
 
     String tag;

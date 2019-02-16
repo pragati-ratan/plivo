@@ -44,7 +44,7 @@ public class ContactsService {
                     findAllResponseDTO.setCount(contactsRepository.count());
                 }
             }
-        }else {
+        } else {
             findAllResponseDTO.setData(contactsRepository.findAll(Pagination.getPageable(limit, page, sortKey, sortOrder)).getContent());
             findAllResponseDTO.setCount(contactsRepository.count());
         }
@@ -61,8 +61,8 @@ public class ContactsService {
         contactsRepository.save(contacts);
     }
 
-    public void updateContact(UpdateContactDTO updateContactDTO) {
-        Optional<Contacts> contacts = contactsRepository.findById(updateContactDTO.getId());
+    public void updateContact(Integer id, UpdateContactDTO updateContactDTO) {
+        Optional<Contacts> contacts = contactsRepository.findById(id);
         if (contacts.isPresent()) {
             if (updateContactDTO.getEmailId() != null) {
                 contacts.get().setEmailId(updateContactDTO.getEmailId());
@@ -80,8 +80,9 @@ public class ContactsService {
                 contacts.get().setTag(updateContactDTO.getTag());
             }
             contactsRepository.save(contacts.get());
-        }else {
+        } else {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Contact not found");
         }
+
     }
 }

@@ -2,6 +2,7 @@ package com.plivo.contactBook.controllers;
 
 import com.plivo.contactBook.dto.ResponseDTO;
 import com.plivo.contactBook.utils.Constants;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.validation.FieldError;
@@ -27,6 +28,16 @@ public class ExceptionHandlerController {
         ResponseDTO res = new ResponseDTO();
         res.setStatus(Constants.StatusCodes.BAD_REQUEST);
         res.setMessage(Constants.ErrorMessage.INVALID_PARAMS + " : " + String.join(", ", invalidParams));
+        return res;
+    }
+
+    @ExceptionHandler(DataIntegrityViolationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
+    @ResponseBody
+    public ResponseDTO validationErrorHandler(DataIntegrityViolationException e) {
+        ResponseDTO res = new ResponseDTO();
+        res.setStatus(Constants.StatusCodes.BAD_REQUEST);
+        res.setMessage(Constants.ErrorMessage.INVALID_PARAMS);
         return res;
     }
 

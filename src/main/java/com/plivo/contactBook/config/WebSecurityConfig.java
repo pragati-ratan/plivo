@@ -63,6 +63,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
                 .antMatchers("/contacts").permitAll()
+                .antMatchers("/contacts/*").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new CORSFilter(), UsernamePasswordAuthenticationFilter.class)

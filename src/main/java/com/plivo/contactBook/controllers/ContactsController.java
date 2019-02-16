@@ -46,11 +46,11 @@ public class ContactsController {
         return responseDTO;
     }
 
-    @PutMapping(path = "/contacts", consumes = "application/json", produces = "application/json")
-    public ResponseDTO updateContact(@NotNull @Valid @RequestBody UpdateContactDTO updateContactDTO,
+    @PutMapping(path = "/contacts/{id}", consumes = "application/json", produces = "application/json")
+    public ResponseDTO updateContact(@NotNull @Valid @RequestBody UpdateContactDTO updateContactDTO, @PathVariable("id") Integer id,
                            HttpServletResponse response) {
         ResponseDTO responseDTO = new ResponseDTO();
-        contactsService.updateContact(updateContactDTO);
+        contactsService.updateContact(id, updateContactDTO);
         response.setStatus(Constants.StatusCodes.SUCCESS);
         responseDTO.setStatus(Constants.StatusCodes.SUCCESS);
         responseDTO.setMessage("Contact updates successfully");
