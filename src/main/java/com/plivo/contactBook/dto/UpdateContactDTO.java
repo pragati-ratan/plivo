@@ -17,6 +17,7 @@ public class UpdateContactDTO {
     Integer id;
 
     @Email
+    @Size(min = 5)
     String emailId;
 
     @Size(min = Constants.Constraints.NAME_MIN, max = Constants.Constraints.NAME_MAX)

@@ -3,7 +3,7 @@ package com.plivo.contactBook.utils;
 public class Constants {
     public static class Constraints {
         public static final int CONTACT_NUM = 10;
-        public static final int ADDRESS_MIN = 10;
+        public static final int ADDRESS_MIN = 0;
         public static final int ADDRESS_MAX = 200;
         public static final int NAME_MIN = 2;
         public static final int NAME_MAX = 100;
