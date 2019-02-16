@@ -33,14 +33,17 @@ public class Constants {
         public static final String NOT_FOUND = "Data not found";
         public static final String UNAUTHORIZED_ACCESS = "Unauthorized access";
     }
+
     public class Roles {
         public static final String USER = "user";
     }
+
     public class Token {
         public static final String HEADER_STRING = "Authorization";
         public static final String TOKEN_PREFIX = "Bearer ";
         public static final long EXPIRY = 7200000L;
     }
+
     public class RequestAttributes {
         public static final String TOKEN = "TOKEN";
         public static final String CONTEXT = "CONTEXT";

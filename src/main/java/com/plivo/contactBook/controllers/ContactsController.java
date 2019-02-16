@@ -35,7 +35,6 @@ public class ContactsController {
         return responseDTO;
     }
 
-
     @PostMapping(path = "/contacts", consumes = "application/json", produces = "application/json")
     public ResponseDTO addContact(@NotNull @Valid @RequestBody AddContactDTO addContactDTO,
                         HttpServletResponse response) {
