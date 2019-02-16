@@ -66,7 +66,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .authorizeRequests()
                 .antMatchers(HttpMethod.POST, "/login").permitAll()
-                .antMatchers("/contacts").hasAuthority(Constants.Roles.USER)
+                .antMatchers("/contacts").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .addFilterBefore(new CORSFilter(), UsernamePasswordAuthenticationFilter.class)

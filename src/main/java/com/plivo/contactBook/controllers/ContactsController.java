@@ -29,7 +29,6 @@ public class ContactsController {
                                      @RequestParam final Optional<String> sortOrder,
                                      @RequestParam final Optional<Integer> limit,
                                      @RequestParam final Optional<Integer> page){
-        userAuthenticationService.getCurrentLoggedUser();
         FindAllResponseDTO<Contacts> findAllResponseDTO = contactsService.getContacts(searchBy, searchValue, sortKey, sortOrder, limit, page);
         ResponseDTO responseDTO = new ResponseDTO(findAllResponseDTO);
         response.setStatus(Constants.StatusCodes.SUCCESS);
