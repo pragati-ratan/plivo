@@ -32,7 +32,7 @@ public class Contacts implements Serializable {
     @Column(name = "contact_number")
     String contactNumber;
 
-    @Size(min = Constants.Constraints.ADDRESS_MIN, max = Constants.Constraints.ADDRESS_MAX)
+    @Size(max = Constants.Constraints.ADDRESS_MAX)
     String address;
 
     @Size(max = Constants.Constraints.ADDRESS_MAX)
